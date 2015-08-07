@@ -17,7 +17,7 @@ var conn = mongoose.connect("mongodb://192.168.11.4:27017/FlightsDB", function(e
     }
 });
 exports.insert = function(req, res){
-
+	
 	// Mongoose Schema definition
 	
 	// Bootstrap express
@@ -38,8 +38,6 @@ exports.insert = function(req, res){
 
 
 exports.show = function(req, res){
-	flightmodel.find({}, function (err, docs) {
-	        res.json(docs);
-	 });
+	res.render('index.html', { title: 'Flight Data Analytics' });
 }
 

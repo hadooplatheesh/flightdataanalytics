@@ -7,14 +7,18 @@ var express = require('express')
   , routes = require('./routes')
   , flights = require('./routes/flights')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , d3 = require('d3')
+  , mustache = require('mustache-express');
 
 var app = express();
 
+app.engine('html', mustache());          // register file extension mustache
+app.use(express.static(__dirname + '/public')); // set static folder
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());

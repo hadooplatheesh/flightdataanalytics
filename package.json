@@ -9,6 +9,8 @@
     "express": "3.2.6",
     "jade": "*",
     "mongodb":"*",
-    "mongoose":"*"
+    "mongoose":"*",
+    "d3":"*",
+    "mustache":"*"
   }
 }
